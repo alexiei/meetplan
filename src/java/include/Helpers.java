@@ -10,7 +10,7 @@ package include;
  *
  * @author Fabio Ricchiuti <Fab1234@hotmail.it>
  */
-public class support_functions {
+public class Helpers {
     
     static public Boolean CheckEmailFormat(String e){
         

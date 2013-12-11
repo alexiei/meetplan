@@ -4,17 +4,17 @@
  * and open the template in the editor.
  */
 
-package ObjectInterfaces;
+package Implementazione;
 
 /**
  *
  * @author Fabio Ricchiuti <Fab1234@hotmail.it>
  */
-public class attrezzatura {
-    int id;
-    String nome;
+public class evento {
+    int id,capienza;
+    String nome, ubicazione;
 
-    public attrezzatura() {
+    public evento() {
     }
 
     public int getId() {
@@ -25,6 +25,14 @@ public class attrezzatura {
         this.id = id;
     }
 
+    public int getCapienza() {
+        return capienza;
+    }
+
+    public void setCapienza(int capienza) {
+        this.capienza = capienza;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -32,8 +40,13 @@ public class attrezzatura {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    
-    
-}
 
+    public String getUbicazione() {
+        return ubicazione;
+    }
+
+    public void setUbicazione(String ubicazione) {
+        this.ubicazione = ubicazione;
+    }
+
+}

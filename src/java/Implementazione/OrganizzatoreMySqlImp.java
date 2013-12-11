@@ -4,18 +4,17 @@
  * and open the template in the editor.
  */
 
-package ObjectInterfaces;
+package Implementazione;
+
+import Modello.Organizzatore;
 
 /**
  *
  * @author Fabio Ricchiuti <Fab1234@hotmail.it>
  */
-public class organizzatore {
-    private String email,nome,cognome;
-    private Boolean pass;
-
-    public organizzatore() {
-    }
+public class OrganizzatoreMySqlImp implements Organizzatore {
+    private String email,nome,cognome,pass;
+    private Boolean grant;
 
     public String getEmail() {
         return email;
@@ -41,12 +40,21 @@ public class organizzatore {
         this.cognome = cognome;
     }
 
-    public Boolean isPass() {
+    public String getPass() {
         return pass;
     }
 
-    public void setPass(Boolean pass) {
+    public void setPass(String pass) {
         this.pass = pass;
     }
+
+    public Boolean isGrant() {
+        return grant;
+    }
+
+    public void setGrant(Boolean grant) {
+        this.grant = grant;
+    }
+
     
     }
