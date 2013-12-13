@@ -32,6 +32,7 @@ public class OrganizzatoreMySqlImp implements Organizzatore {
         this.nome = nome;
     }
 
+    @Override
     public String getCognome() {
         return cognome;
     }
@@ -54,6 +55,11 @@ public class OrganizzatoreMySqlImp implements Organizzatore {
 
     public void setGrant(Boolean grant) {
         this.grant = grant;
+    }
+
+    @Override
+    public Boolean setGrant() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

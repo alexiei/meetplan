@@ -17,4 +17,5 @@ public interface Organizzatore {
     String getCognome();
     String getPass();
     Boolean setGrant();
+    String getEmail();
 }

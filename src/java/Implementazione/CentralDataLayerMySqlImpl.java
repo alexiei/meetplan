@@ -12,9 +12,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.servlet.ServletContext;
 import javax.sql.DataSource;
 
@@ -23,18 +20,26 @@ public class CentralDataLayerMySqlImpl implements CentralDataLayer {
 
     
         @Override
-        public Connection getConnection(ServletContext c)  {
+        public Connection getConnection(ServletContext c)   {
         DataSource ds = (DataSource) c.getAttribute("datasource");
-            try {
+            try {            
                 return ds.getConnection();
             } catch (SQLException ex) {
-                System.out.println(ex.getMessage());}
+                Logger.getLogger(CentralDataLayerMySqlImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
             return null;
+            
     }
 
     @Override
-    public AutenticazioneDataLayer getAutenticazioneDataLayer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public AutenticazioneDataLayer getAutenticazioneDataLayer(Connection con) {
+            try {
+                return new AutenticazioneDataLayerMySqlImpl(con); //To change body of generated methods, choose Tools | Templates.
+            } catch (SQLException ex) {
+                Logger.getLogger(CentralDataLayerMySqlImpl.class.getName()).log(Level.SEVERE, null, ex);
+            
+            }
+            return null;
     }
     
 }

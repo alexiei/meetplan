@@ -15,6 +15,6 @@ import javax.servlet.ServletContext;
  * @author Fabio Ricchiuti <Fab1234@hotmail.it>
  */
 public interface CentralDataLayer {
-    Connection getConnection(ServletContext c);
-    AutenticazioneDataLayer getAutenticazioneDataLayer();
+    Connection getConnection(ServletContext c) throws SQLException;
+    AutenticazioneDataLayer getAutenticazioneDataLayer(Connection con);
 }
